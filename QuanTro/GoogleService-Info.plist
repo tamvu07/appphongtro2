@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>65996230919-j8nr0bu51es000993rtidt4g7us2n1hb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.65996230919-j8nr0bu51es000993rtidt4g7us2n1hb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAsCREVAc3eKep4LlmZc2kbGcJSTXDMEak</string>
+	<key>GCM_SENDER_ID</key>
+	<string>65996230919</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vuminhtam.QuanTro</string>
+	<key>PROJECT_ID</key>
+	<string>appphongtro1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>appphongtro1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:65996230919:ios:f36a67f8ef6e87d5</string>
+	<key>DATABASE_URL</key>
+	<string>https://appphongtro1.firebaseio.com</string>
+</dict>
+</plist>
