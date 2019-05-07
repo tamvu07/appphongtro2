@@ -22,6 +22,7 @@ class Helper {
                 var daytro: [Quanlydaytro] = []
                 var phongtro: [Quanlyphong] = []
                 var chitiet: Chitietphong = Chitietphong.init(diachi: "", dientich: "", gia: 0, motaphong: "", songuoidangthue: 0, songuoitoida: 0, tenphong: "")
+                var thanhvien: [ThanhVien] = []
                 
                 // KIEM TRA NEU CO KEY QUANLYDAYTRO
                 if let _ = postDict["Quanlydaytro"] {
@@ -34,7 +35,7 @@ class Helper {
                             for item2 in data["Quanlyphong"] as! NSMutableDictionary {
                                 if item2.key as! String != "IdDefault" {
                                     let data2 = item2.value as! [String:Any]
-                                    
+
                                     let chitietphong = data2["Chitietphong"] as! [String:Any]
                                     
                                     chitiet.gia = chitietphong["Gia"] as? Int
@@ -45,10 +46,28 @@ class Helper {
                                     chitiet.songuoidangthue = chitietphong["Songuoidangthue"] as? Int
                                     chitiet.tenphong = chitietphong["Tenphong"] as? String
                                     
-                                    phongtro.append(Quanlyphong.init(idPhong: item2.key as! String, chitietphong: chitiet))
+                                    if let thanhvienRoomer: NSMutableDictionary = data2["Quanlythanhvien"] as? NSMutableDictionary {
+                                        for item3 in thanhvienRoomer {
+                                            let thongtinRoomer = item3.value as! [String:Any]
+                                            
+                                            let tenRoomer: String = (thongtinRoomer["Ten"] as? String)!
+                                            let ngaysinhRoomer: String = (thongtinRoomer["Ngaysinh"] as? String)!
+                                            let cmndRoomer: Int = (thongtinRoomer["CMND"] as? Int)!
+                                            let sdtRoomer: Int = (thongtinRoomer["SDT"] as? Int)!
+                                            let avarRoomer: String = thongtinRoomer["Avatar"] as? String ?? ""
+                                            
+                                            let roomer: ThanhVien = ThanhVien.init(idThanhVien: item3.key as! String, ten: tenRoomer, ngaysinh: ngaysinhRoomer, cmnd: cmndRoomer, sdt: sdtRoomer, avatar: avarRoomer)
+                                            thanhvien.append(roomer)
+                                        }
+                                    }
+                                    
+                                    chitiet.songuoidangthue = thanhvien.count
+                                    
+                                    phongtro.append(Quanlyphong.init(idPhong: item2.key as! String, chitietphong: chitiet, thanhvien:thanhvien))
+                                    thanhvien = []
                                 }
                                 else {
-                                    
+
                                 }
                             }
                             

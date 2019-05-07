@@ -20,10 +20,8 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var identifyCardField: AkiraTextField!
     @IBOutlet weak var numPhoneField: AkiraTextField!
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var page: UIPageControl!
     @IBOutlet weak var createButton: UIButton!
-    @IBOutlet var addImageButtons: [UIButton]!
+    @IBOutlet var addImageButtons: UIButton!
     
     var isCreating:Bool!
     @objc var image: UIImage?
@@ -61,18 +59,15 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
         if images.count == 0{
             return
         }
-        setupScrollView()
+//        setupScrollView()
         
     }
     
     func setupUI(){
         createButton.layer.cornerRadius = 5
         createButton.layer.shadowOpacity = 1
-        for button in addImageButtons{
-            button.layer.cornerRadius = 3
-            button.layer.shadowOpacity = 1
-        }
-        
+        addImageButtons.layer.cornerRadius = 3
+        addImageButtons.layer.shadowOpacity = 1
     }
     
     @IBAction func createButtonOnPressed(_ sender: Any) {
@@ -219,26 +214,26 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
     
     
     //MARK: Setup frame of scollView and UIScrollViewDelegate
-    func setupScrollView(){
-        scrollView.isHidden = false
-        page.isHidden = false
-        
-        page.numberOfPages = images.count
-        for i in 0..<images.count{
-            frameForPage.origin.x = scrollView.frame.size.width * CGFloat(i)
-            frameForPage.size = scrollView.frame.size
-            let imageV = UIImageView(frame: frameForPage)
-            imageV.image = images[i]
-            scrollView.addSubview(imageV)
-        }
-        scrollView.contentSize = CGSize(width: (scrollView.frame.width * CGFloat(images.count)), height: scrollView.frame.height)
-        scrollView.delegate = self
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
-        page.currentPage = Int(pageNumber)
-    }
+//    func setupScrollView(){
+//        scrollView.isHidden = false
+//        page.isHidden = false
+//
+//        page.numberOfPages = images.count
+//        for i in 0..<images.count{
+//            frameForPage.origin.x = scrollView.frame.size.width * CGFloat(i)
+//            frameForPage.size = scrollView.frame.size
+//            let imageV = UIImageView(frame: frameForPage)
+//            imageV.image = images[i]
+//            scrollView.addSubview(imageV)
+//        }
+//        scrollView.contentSize = CGSize(width: (scrollView.frame.width * CGFloat(images.count)), height: scrollView.frame.height)
+//        scrollView.delegate = self
+//    }
+//
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+//        page.currentPage = Int(pageNumber)
+//    }
     
     
     //MARK: Setup UIImagePickerDelegate
@@ -348,7 +343,7 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
                     self.images.append(UIImage(data: data!)!)
                     if self.images.count == currentRoomer.identityImageString.count{
                         DispatchQueue.main.async {
-                            self.setupScrollView()
+//                            self.setupScrollView()
                         }
                         
                     }

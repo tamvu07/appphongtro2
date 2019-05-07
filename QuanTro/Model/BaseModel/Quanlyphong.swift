@@ -15,9 +15,11 @@ import Foundation
 struct Quanlyphong : Codable {
 	var iDphong : String?
 	var chitietphong : Chitietphong?
+    var thanhvien: [ThanhVien]?
 
-    init(idPhong: String, chitietphong: Chitietphong) {
+    init(idPhong: String, chitietphong: Chitietphong, thanhvien: [ThanhVien]) {
         self.iDphong = idPhong
         self.chitietphong = chitietphong
+        self.thanhvien = thanhvien
     }
 }

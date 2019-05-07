@@ -62,7 +62,7 @@ class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Store.shared.indexDaytro = indexPath.row
-        performSegue(withIdentifier: "FromListMotelToMotel", sender: tableView.cellForRow(at: indexPath))
+        performSegue(withIdentifier: "FromMotelToListRoom", sender: tableView.cellForRow(at: indexPath))
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -73,8 +73,14 @@ class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDat
         if editingStyle == UITableViewCell.EditingStyle.delete{
             let actionSheet = UIAlertController(title: "Bạn muốn xoá khu trọ này?", message: "Nếu xoá sẽ không thể khôi phục lại dữ liệu của khu trọ này", preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: "Tôi muốn xoá", style: .destructive, handler: { (action) in
+                let idDaytro: String = Store.shared.userMotel.quanlydaytro![indexPath.row].iDdaytro!
                 Store.shared.userMotel.quanlydaytro?.remove(at: indexPath.row)
-                ListOfMotel.shared.saveDataToFirebase()
+//                ListOfMotel.shared.saveDataToFirebase()
+                // remove data on firebase
+                let uid: String = Auth.auth().currentUser!.uid
+                let ref = Database.database().reference().child("User/User2/\(uid)/Quanlydaytro/\(idDaytro)")
+                ref.removeValue()
+                
                 let alert = UIAlertController(title: "Xoá khu trọ thành công", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: { (actionA) in
                     self.tableView.reloadData()
@@ -155,6 +161,13 @@ class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FromMotelToListRoom" {
+            let backItem = UIBarButtonItem()
+            backItem.title = "Trở về"
+            navigationItem.backBarButtonItem = backItem
+        }
+    }
 }
 
 extension UITableView {

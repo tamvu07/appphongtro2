@@ -35,6 +35,12 @@ class CreateRoomController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isCreating {
+            self.title = "Tạo phòng"
+        }
+        else {
+            self.title = "Thông tin phòng"
+        }
         setupUI()
         if isCreating{
             creatAndUpdateButton.setTitle("Thêm phòng", for: .normal)
@@ -109,12 +115,12 @@ class CreateRoomController: UIViewController, UIImagePickerControllerDelegate, U
         let uid = Auth.auth().currentUser?.uid
         let idPhong: String = Database.database().reference().childByAutoId().key!
         
-        let newRoom: Quanlyphong = Quanlyphong.init(idPhong: idPhong, chitietphong: chiTietPhong)
+        let newRoom: Quanlyphong = Quanlyphong.init(idPhong: idPhong, chitietphong: chiTietPhong, thanhvien:  [])
         Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong!.append(newRoom)
         
         let idDAYTRO: String = daytro.iDdaytro!
         
-        let lastRoom: Chitietphong = (daytro.quanlyphong?.last!.chitietphong)!
+        let lastRoom: Chitietphong = newRoom.chitietphong!
         
         let data: [String:Any] = [
             "Diachi": lastRoom.diachi!,

@@ -7,16 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class ListRoomController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
-    
-    
     @IBOutlet weak var tableView: UITableView!
 //    var listRoom:[Room]!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Danh sách phòng"
         setupRightButton()
 //        listRoom = ListOfMotel.shared.getListRoom()
         tableView.register(RoomCell.self,
@@ -71,10 +70,15 @@ class ListRoomController: UIViewController,UITableViewDataSource, UITableViewDel
         if editingStyle == UITableViewCell.EditingStyle.delete{
             let actionSheet = UIAlertController(title: "Bạn muốn xoá phòng này?", message: "Nếu xoá sẽ không thể khôi phục lại dữ liệu của phòng này", preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: "Tôi muốn xoá", style: .destructive, handler: { (action) in
-                ListOfMotel.shared.deleteRoom(withIndex: indexPath.row)
-//                self.listRoom.remove(at: indexPath.row)
+                let idDaytro: String = Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].iDdaytro!
+                let idPhong: String = Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![indexPath.row].iDphong!
+                
                 Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong?.remove(at: indexPath.row)
-                ListOfMotel.shared.saveDataToFirebase()
+                
+                let uid: String = Auth.auth().currentUser!.uid
+                let ref = Database.database().reference().child("User/User2/\(uid)/Quanlydaytro/\(idDaytro)/Quanlyphong/\(idPhong)")
+                ref.removeValue()
+                
                 let alert = UIAlertController(title: "Xoá phòng thành công", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -103,6 +107,9 @@ class ListRoomController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Trở về"
+        navigationItem.backBarButtonItem = backItem
         if segue.identifier == "FromListRoomToCreateRoom"{
             let newVC = segue.destination as! CreateRoomController
             newVC.isCreating = true

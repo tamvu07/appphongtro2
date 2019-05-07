@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in ListMotelController.tableView(_:commit:forRowAt:):ListMotelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Store.shared.userMotel.quanlydaytro![1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in closure #1 in LoginController.bt_login(_:):LoginController.swift">
          <PersistentStrings>
             <PersistentString
@@ -10,6 +18,44 @@
             </PersistentString>
             <PersistentString
                value = "newUser.quanlydaytro![0].quanlyphong">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ListRoomController.tableView(_:commit:forRowAt:):ListRoomController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ListOfMotel.saveDataToFirebase():ListOfMotel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(motel![0])">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in Helper.fetchData(tableName:currentUserId:completion:):Helper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item3.value">
+            </PersistentString>
+            <PersistentString
+               value = "roomer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateRoomController.handleCreateRoom():CreateRoomController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong!.last">
+            </PersistentString>
+            <PersistentString
+               value = "daytro.quanlyphong?.last">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -29,6 +29,7 @@
 		18FA18422278378F009D02B9 /* Screen_Tabar_Custom_Search_02_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA18412278378F009D02B9 /* Screen_Tabar_Custom_Search_02_ViewController.swift */; };
 		18FA184422785B34009D02B9 /* CELL_Tabar_Custom_Search_02_01_DSOf01_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA184322785B34009D02B9 /* CELL_Tabar_Custom_Search_02_01_DSOf01_TableViewCell.swift */; };
 		18FA184622786436009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA184522786435009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift */; };
+		20776734228184430073E596 /* ThanhVien.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20776733228184430073E596 /* ThanhVien.swift */; };
 		20EC50CF227DE1F100C17212 /* Quanlythongtincanhan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC50CA227DE1F000C17212 /* Quanlythongtincanhan.swift */; };
 		20EC50D0227DE1F100C17212 /* Quanlyphong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC50CB227DE1F100C17212 /* Quanlyphong.swift */; };
 		20EC50D1227DE1F100C17212 /* Chitietphong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC50CC227DE1F100C17212 /* Chitietphong.swift */; };
@@ -105,6 +106,7 @@
 		18FA18412278378F009D02B9 /* Screen_Tabar_Custom_Search_02_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_Tabar_Custom_Search_02_ViewController.swift; sourceTree = "<group>"; };
 		18FA184322785B34009D02B9 /* CELL_Tabar_Custom_Search_02_01_DSOf01_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELL_Tabar_Custom_Search_02_01_DSOf01_TableViewCell.swift; sourceTree = "<group>"; };
 		18FA184522786435009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift; sourceTree = "<group>"; };
+		20776733228184430073E596 /* ThanhVien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanhVien.swift; sourceTree = "<group>"; };
 		20EC50CA227DE1F000C17212 /* Quanlythongtincanhan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quanlythongtincanhan.swift; sourceTree = "<group>"; };
 		20EC50CB227DE1F100C17212 /* Quanlyphong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quanlyphong.swift; sourceTree = "<group>"; };
 		20EC50CC227DE1F100C17212 /* Chitietphong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chitietphong.swift; sourceTree = "<group>"; };
@@ -204,12 +206,12 @@
 		18619681226DC148004E8A73 /* tabar */ = {
 			isa = PBXGroup;
 			children = (
-				1861968A226DF001004E8A73 /* collection */,
-				18619684226DC34D004E8A73 /* CELL1_Table_Tabar_Custom_Search_01_TableViewCell.swift */,
-				18619686226DD22F004E8A73 /* CELL2_Table_Tabar_Custom_Search_01_TableViewCell.swift */,
 				18FA184322785B34009D02B9 /* CELL_Tabar_Custom_Search_02_01_DSOf01_TableViewCell.swift */,
 				185614782279252500AE396D /* CELL1_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_TableViewCell.swift */,
+				18619684226DC34D004E8A73 /* CELL1_Table_Tabar_Custom_Search_01_TableViewCell.swift */,
 				1856147A2279256800AE396D /* CELL2_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_TableViewCell.swift */,
+				18619686226DD22F004E8A73 /* CELL2_Table_Tabar_Custom_Search_01_TableViewCell.swift */,
+				1861968A226DF001004E8A73 /* collection */,
 			);
 			path = tabar;
 			sourceTree = "<group>";
@@ -230,6 +232,7 @@
 				20EC50CE227DE1F100C17212 /* Quanlydaytro.swift */,
 				20EC50CB227DE1F100C17212 /* Quanlyphong.swift */,
 				20EC50CA227DE1F000C17212 /* Quanlythongtincanhan.swift */,
+				20776733228184430073E596 /* ThanhVien.swift */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -341,36 +344,36 @@
 		EAE6DF4421AABBBD000749CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18619681226DC148004E8A73 /* tabar */,
-				EAE6DF3D21A92682000749CD /* RegisterController.swift */,
+				1882776B2268C814002E1813 /* CELL_Main_Customer_TableViewCell.swift */,
+				EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */,
+				EAAB960321BA4D21005F30ED /* CollectingRentalController.swift */,
+				EA00CA5E21DB6C0E000124F8 /* ContractController.swift */,
+				EAA4450121B4E170008AE807 /* CreateContractController.swift */,
+				EAA444ED21B2338B008AE807 /* CreateRoomController.swift */,
+				EA00CA5C21DA5BB6000124F8 /* CreateRoomerController.swift */,
+				EA00CA6421DBAD95000124F8 /* CreateVehicleController.swift */,
+				EAE0C63821D4EEFB0085E5FD /* HistoryIndexController.swift */,
 				EAE6DF3F21A9A009000749CD /* ListMotelController.swift */,
+				EAA4450321B4ECBD008AE807 /* ListRoomAvailableController.swift */,
+				EAA8927721B1590A005761BB /* ListRoomController.swift */,
+				EA00CA5A21D9AEC5000124F8 /* ListRoomerController.swift */,
+				EA00CA6221DBAAE8000124F8 /* ListVehicleController.swift */,
 				EAE6DF2821A8F614000749CD /* LoginController.swift */,
 				EAD5632C21AFF9A100ACC2DE /* MotelController.swift */,
-				EAA8927721B1590A005761BB /* ListRoomController.swift */,
-				EAA444ED21B2338B008AE807 /* CreateRoomController.swift */,
-				EAA4450121B4E170008AE807 /* CreateContractController.swift */,
-				EAA4450321B4ECBD008AE807 /* ListRoomAvailableController.swift */,
-				EAA4450921B6761E008AE807 /* ServicePricesController.swift */,
-				EAAB960321BA4D21005F30ED /* CollectingRentalController.swift */,
-				EA34CE9421C25AA900D79F26 /* WriteIndexController.swift */,
 				EA1ABD4221C6410400199442 /* PopupController.swift */,
-				EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */,
-				EAE0C63821D4EEFB0085E5FD /* HistoryIndexController.swift */,
-				EAE0C63A21D50E420085E5FD /* SearchController.swift */,
-				EA00CA5A21D9AEC5000124F8 /* ListRoomerController.swift */,
-				EA00CA5C21DA5BB6000124F8 /* CreateRoomerController.swift */,
-				EA00CA5E21DB6C0E000124F8 /* ContractController.swift */,
-				EA00CA6221DBAAE8000124F8 /* ListVehicleController.swift */,
-				EA00CA6421DBAD95000124F8 /* CreateVehicleController.swift */,
+				EAE6DF3D21A92682000749CD /* RegisterController.swift */,
 				18D31CCD226829E600482F00 /* Screen_Main_Customer_ViewController.swift */,
-				1882776B2268C814002E1813 /* CELL_Main_Customer_TableViewCell.swift */,
-				18F6B86B2269697B00523FBA /* Screen_Tabar_Customer_Seach_1_ViewController.swift */,
 				1861967F226DBF23004E8A73 /* Screen_Tabar_Custom_Search_01_ViewController.swift */,
+				18FA184522786435009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift */,
 				18FA183B227836AE009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_ViewController.swift */,
 				18FA183D22783702009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_ViewController.swift */,
 				18FA183F22783753009D02B9 /* Screen_Tabar_Custom_Search_02_01_ViewController.swift */,
 				18FA18412278378F009D02B9 /* Screen_Tabar_Custom_Search_02_ViewController.swift */,
-				18FA184522786435009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift */,
+				18F6B86B2269697B00523FBA /* Screen_Tabar_Customer_Seach_1_ViewController.swift */,
+				EAE0C63A21D50E420085E5FD /* SearchController.swift */,
+				EAA4450921B6761E008AE807 /* ServicePricesController.swift */,
+				18619681226DC148004E8A73 /* tabar */,
+				EA34CE9421C25AA900D79F26 /* WriteIndexController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				EA00CA5F21DB6C0E000124F8 /* ContractController.swift in Sources */,
 				18FA184622786436009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift in Sources */,
 				18FA183A227835D2009D02B9 /* function.swift in Sources */,
+				20776734228184430073E596 /* ThanhVien.swift in Sources */,
 				EAE0C63B21D50E420085E5FD /* SearchController.swift in Sources */,
 				EAD5632D21AFF9A100ACC2DE /* MotelController.swift in Sources */,
 				EA00CA5921D9AE17000124F8 /* RoomerCell.swift in Sources */,

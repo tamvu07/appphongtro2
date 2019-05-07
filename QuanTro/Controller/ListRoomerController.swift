@@ -18,9 +18,6 @@ class ListRoomerController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
         tableView.register(RoomerCell.self, forCellReuseIdentifier: "RoomerCell")
         let nib = UINib(nibName: "RoomerCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "RoomerCell")
