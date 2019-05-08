@@ -23,7 +23,7 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet var addImageButtons: UIButton!
     
-    var isCreating:Bool!
+    var isCreating:Bool = true
     @objc var image: UIImage?
     @objc var lastChosenMediaType: String?
     var images = [UIImage]()
@@ -34,10 +34,12 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
     
     var indexRoomer:Int!
     
+    let daytro: Quanlydaytro = Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+//        setupUI()
         if isCreating{
             createButton.setTitle("Tạo người trọ", for: .normal)
         }else{
@@ -71,7 +73,7 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func createButtonOnPressed(_ sender: Any) {
-        if nameField.text?.isEmpty == true || dateOfBirthField.text?.isEmpty == true || identifyCardField.text?.isEmpty == true || numPhoneField.text?.isEmpty == true || profileImageView.image == nil || images.count == 0 {
+        if nameField.text?.isEmpty == true || dateOfBirthField.text?.isEmpty == true || identifyCardField.text?.isEmpty == true || numPhoneField.text?.isEmpty == true || profileImageView.image == nil {
             let alert = UIAlertController(title: "Thiếu thông tin", message: "Bạn cần điền đầy đủ thông tin và thêm đủ hình", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -81,29 +83,24 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func handleCreating(){
-        var newRoomer = Roomer()
-        newRoomer.name = nameField.text
-        newRoomer.dateOfBirth = datePicker.date
-        newRoomer.identifyCard = identifyCardField.text
-        newRoomer.numPhone = numPhoneField.text
-        newRoomer.roomID = ListOfMotel.shared.getCurrentRoom().id
-        newRoomer.identityImageString = [String]()
-        for imageTemp in images{
-            let idImage = NSUUID().uuidString
-            let storageRef = Storage.storage().reference().child("imagesOfMotels/\(idImage).jpg")
-            let data = imageTemp.jpegData(compressionQuality: 1)
-            if data != nil{
-                storageRef.putData(data!, metadata: nil) { (metadata, error) in
-                    if error != nil{
-                        print(error!)
-                        return
-                    }
-                }
-                newRoomer.identityImageString.append("\(idImage).jpg")
-            }
-        }
-        let idImage = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child("imagesOfMotels/\(idImage).jpg")
+        let uid: String = Auth.auth().currentUser!.uid
+        let idDaytro: String = daytro.iDdaytro!
+        let idPhong: String = daytro.quanlyphong![Store.shared.indexPhongtro].iDphong!
+        
+        let tableName  = Database.database().reference().child("User/User2/\(uid)/Quanlydaytro/\(idDaytro)/Quanlyphong/\(idPhong)/Quanlythanhvien").childByAutoId()
+        
+        var newRoomer: ThanhVien = ThanhVien.init(idThanhVien: "", ten: "", ngaysinh: "", cmnd: 0, sdt: 0, avatar: "")
+        
+        newRoomer.ten = nameField.text
+        newRoomer.ngaysinh = dateOfBirthField.text
+        newRoomer.cmnd = NumberFormatter().number(from: identifyCardField.text!)?.doubleValue
+        newRoomer.sdt = NumberFormatter().number(from: numPhoneField.text!)?.doubleValue
+        newRoomer.idThanhVien = tableName.key
+        
+        let idImage: String = String.init(format: "%.0f", newRoomer.cmnd!)
+        
+        let idThanhvien: String = newRoomer.idThanhVien!
+        let storageRef = Storage.storage().reference().child("imagesOfRoomer/\(idThanhvien)/\(idImage).jpg")
         let data = profileImageView.image?.jpegData(compressionQuality: 1)
         if data != nil{
             storageRef.putData(data!, metadata: nil) { (metadata, error) in
@@ -112,13 +109,32 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
                     return
                 }
             }
-            newRoomer.profileImageString = "\(idImage).jpg"
+            newRoomer.avatar = "\(idImage).jpg"
         }
         
-        ListOfMotel.shared.addRoomer(newRoomer: newRoomer)
-        ListOfMotel.shared.saveDataToFirebase()
+//        ListOfMotel.shared.addRoomer(newRoomer: newRoomer)
+//        ListOfMotel.shared.saveDataToFirebase()
+
+        Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].thanhvien?.append(newRoomer)
+        
+        let addNewRoomer: [String:Any] = [
+            "Ten": newRoomer.ten!,
+            "Ngaysinh": newRoomer.ngaysinh!,
+            "CMND": newRoomer.cmnd!,
+            "SDT": newRoomer.sdt!,
+            "Avatar": newRoomer.avatar as Any
+        ]
+        
+        tableName.setValue(addNewRoomer)
+        
         let alert = UIAlertController(title: "Tạo người trọ thành công ", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: { (action) in
+            let songuoidangthue: Int = (self.daytro.quanlyphong![Store.shared.indexPhongtro].chitietphong?.songuoidangthue!)! + 1
+            let updateDataPhong: [String:Any] = ["Songuoidangthue": songuoidangthue]
+            Database.database().reference().child("User/User2/\(uid)/Quanlydaytro/\(idDaytro)/Quanlyphong/\(idPhong)/Chitietphong").updateChildValues(updateDataPhong)
+            
+            Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].chitietphong?.songuoidangthue = songuoidangthue
+            
             self.navigationController?.popViewController(animated: true)
         }))
         present(alert, animated: true, completion: nil)
@@ -126,13 +142,16 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func handleUpdating(){
-        var currentRoomer = ListOfMotel.shared.getCurrentRoom().listRoomer[indexRoomer]
-        currentRoomer.name = nameField.text
-        currentRoomer.dateOfBirth = datePicker.date
-        currentRoomer.identifyCard = identifyCardField.text
-        currentRoomer.numPhone = numPhoneField.text
-        let idImage = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child("imagesOfMotels/\(idImage).jpg")
+        var currentRoomer: ThanhVien = daytro.quanlyphong![Store.shared.indexPhongtro].thanhvien![Store.shared.indexRoomer]
+        currentRoomer.ten = nameField.text
+        currentRoomer.ngaysinh = dateOfBirthField.text
+        currentRoomer.cmnd = NumberFormatter().number(from: identifyCardField.text!)?.doubleValue
+        currentRoomer.sdt = NumberFormatter().number(from: numPhoneField.text!)?.doubleValue
+        
+        let idImage:String = String.init(format: "%.0f", currentRoomer.cmnd!)
+        let idThanhVien: String = currentRoomer.idThanhVien!
+        
+        let storageRef = Storage.storage().reference().child("imagesOfRoomer/\(idThanhVien)/\(idImage).jpg")
         let data = profileImageView.image?.jpegData(compressionQuality: 1)
         if data != nil{
             storageRef.putData(data!, metadata: nil) { (metadata, error) in
@@ -141,11 +160,27 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
                     return
                 }
             }
-            currentRoomer.profileImageString = "\(idImage).jpg"
+            currentRoomer.avatar = "\(idImage).jpg"
         }
+//        ListOfMotel.shared.updateRoomer(withIndex: indexRoomer, roomer: currentRoomer)
+//        ListOfMotel.shared.saveDataToFirebase()
         
-        ListOfMotel.shared.updateRoomer(withIndex: indexRoomer, roomer: currentRoomer)
-        ListOfMotel.shared.saveDataToFirebase()
+        Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].thanhvien![Store.shared.indexRoomer] = currentRoomer
+        
+        let uid: String = Auth.auth().currentUser!.uid
+        let idDaytro: String = daytro.iDdaytro!
+        let idPhong: String = daytro.quanlyphong![Store.shared.indexPhongtro].iDphong!
+        
+        let updateRoomer: [String:Any] = [
+            "Ten": currentRoomer.ten!,
+            "Ngaysinh": currentRoomer.ngaysinh!,
+            "CMND": currentRoomer.cmnd!,
+            "SDT": currentRoomer.sdt!,
+            "Avatar": currentRoomer.avatar as Any
+        ]
+        Database.database().reference().child("User/User2/\(uid)/Quanlydaytro/\(idDaytro)/Quanlyphong/\(idPhong)/Quanlythanhvien/\(idThanhVien)").setValue(updateRoomer)
+        
+        
         let alert = UIAlertController(title: "Cập nhật thành công", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: { (action) in
             self.navigationController?.popViewController(animated: true)
@@ -287,44 +322,41 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
         picker.dismiss(animated: true, completion:nil)
     }
     
-    
-   
-    
-    
-    
-    
     @IBAction func tapGestureRecognized(_ sender: Any) {
         nameField.resignFirstResponder()
         dateOfBirthField.resignFirstResponder()
         identifyCardField.resignFirstResponder()
         numPhoneField.resignFirstResponder()
-        
     }
-    
     
     @IBAction func addProfileImage(_ sender: Any) {
         isAddProfileImage = true
         showActionSheet()
     }
     
-    @IBAction func addIdentifyCardImage(_ sender: Any) {
-        isAddProfileImage = false
-        showActionSheet()
-    }
+//    @IBAction func addIdentifyCardImage(_ sender: Any) {
+//        isAddProfileImage = false
+//        showActionSheet()
+//    }
     
     func setupInfo(){
-        let currentRoomer = ListOfMotel.shared.getCurrentRoom().listRoomer[indexRoomer]
-        nameField.text = currentRoomer.name
+        let currentRoomer: ThanhVien = daytro.quanlyphong![Store.shared.indexPhongtro].thanhvien![Store.shared.indexRoomer]
+        nameField.text = currentRoomer.ten
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateOfBirthField.text = dateFormatter.string(from: currentRoomer.dateOfBirth)
-        identifyCardField.text = currentRoomer.identifyCard
-        numPhoneField.text = currentRoomer.numPhone
-        if let profileImageString = currentRoomer.profileImageString{
-            let storageRef = Storage.storage().reference().child("imagesOfMotels/\(profileImageString)")
-            storageRef.getData(maxSize: 3*1024*1024) { (data, error) in
+        dateOfBirthField.text = currentRoomer.ngaysinh
+        identifyCardField.text = String.init(format: "%.0f", currentRoomer.cmnd!)
+        numPhoneField.text = String.init(format: "%.0f", currentRoomer.sdt!)
+        
+        let idImage:String = String.init(format: "%.0f", currentRoomer.cmnd!)
+        let idThanhVien: String = currentRoomer.idThanhVien!
+        
+        if let _ = currentRoomer.avatar {
+            let storageRef = Storage.storage().reference().child("imagesOfRoomer/\(idThanhVien)/\(idImage).jpg")
+            storageRef.getData(maxSize: 4*1024*1024) { (data, error) in
                 if error != nil{
                     print(error!)
+                    self.profileImageView.image = UIImage.init(named: "person")
                 }else{
                     DispatchQueue.main.async{
                         self.profileImageView.image = UIImage(data: data!)!
@@ -333,23 +365,26 @@ class CreateRoomerController: UIViewController, UIImagePickerControllerDelegate,
                 
             }
         }
-        
-        for imageString in currentRoomer.identityImageString{
-            let storageRef = Storage.storage().reference().child("imagesOfMotels/\(imageString)")
-            storageRef.getData(maxSize: 3*1024*1024) { (data, error) in
-                if error != nil{
-                    print(error!)
-                }else{
-                    self.images.append(UIImage(data: data!)!)
-                    if self.images.count == currentRoomer.identityImageString.count{
-                        DispatchQueue.main.async {
-//                            self.setupScrollView()
-                        }
-                        
-                    }
-                }
-                
-            }
+        else {
+            self.profileImageView.image = UIImage.init(named: "person")
         }
+        
+//        for imageString in currentRoomer.identityImageString{
+//            let storageRef = Storage.storage().reference().child("imagesOfMotels/\(imageString)")
+//            storageRef.getData(maxSize: 3*1024*1024) { (data, error) in
+//                if error != nil{
+//                    print(error!)
+//                }else{
+//                    self.images.append(UIImage(data: data!)!)
+//                    if self.images.count == currentRoomer.identityImageString.count{
+//                        DispatchQueue.main.async {
+////                            self.setupScrollView()
+//                        }
+//
+//                    }
+//                }
+//
+//            }
+//        }
     }
 }

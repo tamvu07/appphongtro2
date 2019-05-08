@@ -52,8 +52,8 @@ class Helper {
                                             
                                             let tenRoomer: String = (thongtinRoomer["Ten"] as? String)!
                                             let ngaysinhRoomer: String = (thongtinRoomer["Ngaysinh"] as? String)!
-                                            let cmndRoomer: Int = (thongtinRoomer["CMND"] as? Int)!
-                                            let sdtRoomer: Int = (thongtinRoomer["SDT"] as? Int)!
+                                            let cmndRoomer: Double = (thongtinRoomer["CMND"] as? Double)!
+                                            let sdtRoomer: Double = (thongtinRoomer["SDT"] as? Double)!
                                             let avarRoomer: String = thongtinRoomer["Avatar"] as? String ?? ""
                                             
                                             let roomer: ThanhVien = ThanhVien.init(idThanhVien: item3.key as! String, ten: tenRoomer, ngaysinh: ngaysinhRoomer, cmnd: cmndRoomer, sdt: sdtRoomer, avatar: avarRoomer)

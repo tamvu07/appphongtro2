@@ -733,11 +733,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = QuanTro/QuanTro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N4NC8GYX67;
+				DEVELOPMENT_TEAM = 7VK64PWFW2;
 				INFOPLIST_FILE = QuanTro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vuminhtam.QuanTro;
+				PRODUCT_BUNDLE_IDENTIFIER = vuminhtamthanh.QuanTro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuanTro/support/QuanTro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -754,11 +754,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = QuanTro/QuanTro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N4NC8GYX67;
+				DEVELOPMENT_TEAM = 7VK64PWFW2;
 				INFOPLIST_FILE = QuanTro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vuminhtam.QuanTro;
+				PRODUCT_BUNDLE_IDENTIFIER = vuminhtamthanh.QuanTro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuanTro/support/QuanTro-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

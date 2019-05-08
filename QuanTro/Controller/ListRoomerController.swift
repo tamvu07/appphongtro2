@@ -12,9 +12,11 @@ import Firebase
 
 class ListRoomerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    var listRoomer:[Roomer]!
     @IBOutlet weak var tableView: UITableView!
+    
+    var listRoomer: [ThanhVien]!
+    var chiTietPhong: Chitietphong!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,18 +25,22 @@ class ListRoomerController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(nib, forCellReuseIdentifier: "RoomerCell")
         tableView.rowHeight = 110
         
-    }
+        listRoomer = Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].thanhvien!
+        chiTietPhong = Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].chitietphong
+}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listRoomer = ListOfMotel.shared.getCurrentRoom().listRoomer
+//        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         tableView.reloadData()
     }
+    
     // MARK:- DELEGATE and DATASOURCE OF TABLE VIEW
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !ListOfMotel.shared.getCurrentRoom().isStaying{
-            return 0
-        }
         return listRoomer.count + 1
     }
     
@@ -66,41 +72,41 @@ class ListRoomerController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.contentView.addSubview(cellSize)
         cell.contentView.sendSubviewToBack(cellSize)
         
-        if let profileImageString = listRoomer[indexPath.row].profileImageString{
-            let storageRef = Storage.storage().reference().child("imagesOfMotels/\(profileImageString)")
-            storageRef.getData(maxSize: 3*1024*1024) { (data, error) in
-                if error != nil{
-                    print(error!)
-                }else{
-                    DispatchQueue.main.async{
-                        cell.imageV.image = UIImage(data: data!)!
-                    }
-                }
-                
-            }
-        }
+//        if let profileImageString = listRoomer[indexPath.row].profileImageString{
+//            let storageRef = Storage.storage().reference().child("imagesOfMotels/\(profileImageString)")
+//            storageRef.getData(maxSize: 3*1024*1024) { (data, error) in
+//                if error != nil{
+//                    print(error!)
+//                }else{
+//                    DispatchQueue.main.async{
+                        cell.imageV.image = UIImage.init(named: "person")
+//                    }
+//                }
+//
+//            }
+//        }
         
-        cell.name.text = listRoomer[indexPath.row].name
-        cell.numPhone.text = listRoomer[indexPath.row].numPhone
+        cell.name.text = listRoomer[indexPath.row].ten
+        cell.numPhone.text = String.init(format: "%.0f", listRoomer[indexPath.row].sdt!)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == listRoomer.count && ListOfMotel.shared.getCurrentRoom().maxRoomer == listRoomer.count{
+        if indexPath.row == listRoomer.count &&  chiTietPhong.songuoitoida! <= listRoomer.count{
             let alert = UIAlertController(title: "Không thể tạo người trọ", message: "Số người trọ của phòng này đã tới mức giới hạn", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             return
         }
-        performSegue(withIdentifier: "FromListRoomerToCreate", sender: tableView.cellForRow(at: indexPath))
+        self.performSegue(withIdentifier: "FromListRoomerToCreate", sender: tableView.cellForRow(at: indexPath))
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = tableView.indexPath(for: (sender as! UITableViewCell))
         let newVC = segue.destination as! CreateRoomerController
         newVC.isCreating = indexPath?.row == listRoomer.count ? true:false
-        newVC.indexRoomer = indexPath?.row
+        Store.shared.indexRoomer = indexPath?.row
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -111,9 +117,28 @@ class ListRoomerController: UIViewController, UITableViewDelegate, UITableViewDa
         if editingStyle == UITableViewCell.EditingStyle.delete{
             let actionSheet = UIAlertController(title: "Bạn muốn xoá người trọ này?", message: "Nếu xoá sẽ không thể khôi phục lại người trọ này", preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: "Tôi muốn xoá", style: .destructive, handler: { (action) in
-                ListOfMotel.shared.deleteRoomer(withIndex: indexPath.row)
+//                ListOfMotel.shared.deleteRoomer(withIndex: indexPath.row)
+//                self.listRoomer.remove(at: indexPath.row)
+//                ListOfMotel.shared.saveDataToFirebase()
+                
+                let idThanhvien: String = (self.listRoomer?[indexPath.row].idThanhVien)!
+                
+                let uid: String = Auth.auth().currentUser!.uid
+                let idDaytro: String = Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].iDdaytro!
+                let idPhong: String = Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].iDphong!
+                
+                let ref = Database.database().reference().child("User/User2/\(uid)/Quanlydaytro/\(idDaytro)/Quanlyphong/\(idPhong)/Quanlythanhvien/\(idThanhvien)")
+                ref.removeValue()
+                
                 self.listRoomer.remove(at: indexPath.row)
-                ListOfMotel.shared.saveDataToFirebase()
+                Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].thanhvien?.remove(at: indexPath.row)
+                
+                let songuoidangthue: Int = (Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].chitietphong?.songuoidangthue!)! - 1
+                let updateDataPhong: [String:Any] = ["Songuoidangthue": songuoidangthue]
+                Database.database().reference().child("User/User2/\(uid)/Quanlydaytro/\(idDaytro)/Quanlyphong/\(idPhong)/Chitietphong").updateChildValues(updateDataPhong)
+                
+                Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong![Store.shared.indexPhongtro].chitietphong?.songuoidangthue = songuoidangthue
+                
                 let alert = UIAlertController(title: "Xoá người trọ thành công", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)

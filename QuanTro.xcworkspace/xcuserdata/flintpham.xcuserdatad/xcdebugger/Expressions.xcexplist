@@ -11,17 +11,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in closure #1 in LoginController.bt_login(_:):LoginController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "newUser">
-            </PersistentString>
-            <PersistentString
-               value = "newUser.quanlydaytro![0].quanlyphong">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in ListRoomController.tableView(_:commit:forRowAt:):ListRoomController.swift">
          <PersistentStrings>
             <PersistentString
@@ -30,10 +19,32 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "CreateRoomerController.handleCreating():CreateRoomerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nameField.text">
+            </PersistentString>
+            <PersistentString
+               value = "newRoomer.ten">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ListOfMotel.saveDataToFirebase():ListOfMotel.swift">
          <PersistentStrings>
             <PersistentString
                value = "print(motel![0])">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateRoomController.handleCreateRoom():CreateRoomController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong!.last">
+            </PersistentString>
+            <PersistentString
+               value = "daytro.quanlyphong?.last">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -49,13 +60,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CreateRoomController.handleCreateRoom():CreateRoomController.swift">
+         contextName = "closure #1 in closure #1 in closure #1 in LoginController.bt_login(_:):LoginController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Store.shared.userMotel.quanlydaytro![Store.shared.indexDaytro].quanlyphong!.last">
+               value = "newUser">
             </PersistentString>
             <PersistentString
-               value = "daytro.quanlyphong?.last">
+               value = "newUser.quanlydaytro![0].quanlyphong">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ListRoomerController.tableView(_:commit:forRowAt:):ListRoomerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Store.shared.indexDaytro">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -63,20 +63,17 @@ class CreateRoomController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func tapGestureRecognized(_ sender: Any) {
         nameField.resignFirstResponder()
-
         maxRoomerField.resignFirstResponder()
         rentalPriceField.resignFirstResponder()
         areaField.resignFirstResponder()
+        Description.resignFirstResponder()
+        address.resignFirstResponder()
     }
     
     @IBAction func closeKeyboard(_ sender: Any) {
         nameField.resignFirstResponder()
     }
-    
-    @IBAction func addImage(_ sender: Any) {
-//        showActionSheet()
-    }
-    
+        
     @IBAction func onCreateAndUpdateButtonPressed(_ sender: Any) {
         if nameField.text?.isEmpty == true ||  maxRoomerField.text?.isEmpty == true || rentalPriceField.text?.isEmpty == true || areaField.text?.isEmpty == true || Description.text?.isEmpty == true {
             let alert = UIAlertController(title: "Thiếu thông tin", message: "Bạn cần điền đầy đủ thông tin và thêm đủ hình", preferredStyle: .alert)

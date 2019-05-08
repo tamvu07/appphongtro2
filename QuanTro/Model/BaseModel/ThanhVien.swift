@@ -16,11 +16,11 @@ struct ThanhVien : Codable {
     var idThanhVien: String?
     var ten : String?
     var ngaysinh : String?
-    var cmnd:  Int?
-    var sdt: Int?
+    var cmnd:  Double?
+    var sdt: Double?
     var avatar: String?
     
-    init(idThanhVien: String, ten: String, ngaysinh: String, cmnd: Int, sdt: Int, avatar: String) {
+    init(idThanhVien: String, ten: String, ngaysinh: String, cmnd: Double, sdt: Double, avatar: String) {
         self.idThanhVien = idThanhVien
         self.ten = ten
         self.ngaysinh = ngaysinh

@@ -13,4 +13,5 @@ class Store {
     var userMotel: NewUser!
     var indexDaytro: Int!
     var indexPhongtro: Int!
+    var indexRoomer: Int!
 }
