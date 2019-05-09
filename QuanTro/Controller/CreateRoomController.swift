@@ -1,10 +1,3 @@
-//
-//  CreateRoomController.swift
-//  QuanTro
-//
-//  Created by Le Nguyen Quoc Cuong on 12/1/18.
-//  Copyright © 2018 Le Nguyen Quoc Cuong. All rights reserved.
-//
 
 import UIKit
 import AVFoundation

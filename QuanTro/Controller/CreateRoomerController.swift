@@ -1,10 +1,3 @@
-//
-//  CreateRoomerController.swift
-//  QuanTro
-//
-//  Created by Le Nguyen Quoc Cuong on 12/31/18.
-//  Copyright © 2018 Le Nguyen Quoc Cuong. All rights reserved.
-//
 
 import UIKit
 import MobileCoreServices

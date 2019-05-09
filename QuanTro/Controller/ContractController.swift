@@ -1,10 +1,3 @@
-//
-//  ContractController.swift
-//  QuanTro
-//
-//  Created by Le Nguyen Quoc Cuong on 1/1/19.
-//  Copyright © 2019 Le Nguyen Quoc Cuong. All rights reserved.
-//
 
 import UIKit
 import TextFieldEffects
