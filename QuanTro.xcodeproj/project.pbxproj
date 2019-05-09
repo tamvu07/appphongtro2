@@ -44,27 +44,17 @@
 		EA00CA5D21DA5BB6000124F8 /* CreateRoomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00CA5C21DA5BB6000124F8 /* CreateRoomerController.swift */; };
 		EA00CA5F21DB6C0E000124F8 /* ContractController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00CA5E21DB6C0E000124F8 /* ContractController.swift */; };
 		EA00CA6121DBAA43000124F8 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00CA6021DBAA43000124F8 /* VehicleCell.swift */; };
-		EA00CA6321DBAAE8000124F8 /* ListVehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00CA6221DBAAE8000124F8 /* ListVehicleController.swift */; };
-		EA00CA6521DBAD95000124F8 /* CreateVehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00CA6421DBAD95000124F8 /* CreateVehicleController.swift */; };
 		EA115FB221BAA1FB001BC434 /* BillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA115FB121BAA1FB001BC434 /* BillCell.xib */; };
 		EA115FB421BAA7ED001BC434 /* BillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA115FB321BAA7ED001BC434 /* BillCell.swift */; };
 		EA1ABD3C21C4F31700199442 /* WriteIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1ABD3B21C4F31700199442 /* WriteIndexCell.xib */; };
 		EA1ABD3E21C4F65F00199442 /* WriteIndexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1ABD3D21C4F65F00199442 /* WriteIndexCell.swift */; };
-		EA1ABD4321C6410400199442 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1ABD4221C6410400199442 /* PopupController.swift */; };
 		EA2679BE21DCFCF4001F0ECF /* VehicleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2679BD21DCFCF4001F0ECF /* VehicleCell.xib */; };
-		EA34CE9521C25AA900D79F26 /* WriteIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34CE9421C25AA900D79F26 /* WriteIndexController.swift */; };
 		EAA444EE21B2338B008AE807 /* CreateRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA444ED21B2338B008AE807 /* CreateRoomController.swift */; };
-		EAA4450221B4E170008AE807 /* CreateContractController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA4450121B4E170008AE807 /* CreateContractController.swift */; };
-		EAA4450421B4ECBD008AE807 /* ListRoomAvailableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA4450321B4ECBD008AE807 /* ListRoomAvailableController.swift */; };
 		EAA4450621B4F4D1008AE807 /* RoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA4450521B4F4D1008AE807 /* RoomCell.xib */; };
-		EAA4450A21B6761E008AE807 /* ServicePricesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA4450921B6761E008AE807 /* ServicePricesController.swift */; };
 		EAA8927821B1590A005761BB /* ListRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA8927721B1590A005761BB /* ListRoomController.swift */; };
 		EAA8927A21B15928005761BB /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA8927921B15928005761BB /* RoomCell.swift */; };
 		EAD5632921AC4CC400ACC2DE /* ListOfMotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5632821AC4CC400ACC2DE /* ListOfMotel.swift */; };
-		EAE0C63421D46D230085E5FD /* CollectingFeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */; };
 		EAE0C63721D4EE250085E5FD /* HistoryIndexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63621D4EE250085E5FD /* HistoryIndexCell.swift */; };
-		EAE0C63921D4EEFB0085E5FD /* HistoryIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63821D4EEFB0085E5FD /* HistoryIndexController.swift */; };
-		EAE0C63B21D50E420085E5FD /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63A21D50E420085E5FD /* SearchController.swift */; };
 		EAE0C63D21D511600085E5FD /* RoomerCellForSearching.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE0C63C21D511600085E5FD /* RoomerCellForSearching.xib */; };
 		EAE0C63F21D5148B0085E5FD /* RoomerCellForSearching.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63E21D5148B0085E5FD /* RoomerCellForSearching.swift */; };
 		EAE6DF2721A8F614000749CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6DF2621A8F614000749CD /* AppDelegate.swift */; };
@@ -120,28 +110,18 @@
 		EA00CA5C21DA5BB6000124F8 /* CreateRoomerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomerController.swift; sourceTree = "<group>"; };
 		EA00CA5E21DB6C0E000124F8 /* ContractController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractController.swift; sourceTree = "<group>"; };
 		EA00CA6021DBAA43000124F8 /* VehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
-		EA00CA6221DBAAE8000124F8 /* ListVehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVehicleController.swift; sourceTree = "<group>"; };
-		EA00CA6421DBAD95000124F8 /* CreateVehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVehicleController.swift; sourceTree = "<group>"; };
 		EA115FB121BAA1FB001BC434 /* BillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillCell.xib; sourceTree = "<group>"; };
 		EA115FB321BAA7ED001BC434 /* BillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCell.swift; sourceTree = "<group>"; };
 		EA1ABD3B21C4F31700199442 /* WriteIndexCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteIndexCell.xib; sourceTree = "<group>"; };
 		EA1ABD3D21C4F65F00199442 /* WriteIndexCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteIndexCell.swift; sourceTree = "<group>"; };
-		EA1ABD4221C6410400199442 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		EA2679BD21DCFCF4001F0ECF /* VehicleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleCell.xib; sourceTree = "<group>"; };
-		EA34CE9421C25AA900D79F26 /* WriteIndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteIndexController.swift; sourceTree = "<group>"; };
 		EAA444ED21B2338B008AE807 /* CreateRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomController.swift; sourceTree = "<group>"; };
-		EAA4450121B4E170008AE807 /* CreateContractController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContractController.swift; sourceTree = "<group>"; };
-		EAA4450321B4ECBD008AE807 /* ListRoomAvailableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomAvailableController.swift; sourceTree = "<group>"; };
 		EAA4450521B4F4D1008AE807 /* RoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCell.xib; sourceTree = "<group>"; };
-		EAA4450921B6761E008AE807 /* ServicePricesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePricesController.swift; sourceTree = "<group>"; };
 		EAA4450B21B6C20A008AE807 /* QuanTro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuanTro.entitlements; sourceTree = "<group>"; };
 		EAA8927721B1590A005761BB /* ListRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomController.swift; sourceTree = "<group>"; };
 		EAA8927921B15928005761BB /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		EAD5632821AC4CC400ACC2DE /* ListOfMotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMotel.swift; sourceTree = "<group>"; };
-		EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectingFeeController.swift; sourceTree = "<group>"; };
 		EAE0C63621D4EE250085E5FD /* HistoryIndexCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryIndexCell.swift; sourceTree = "<group>"; };
-		EAE0C63821D4EEFB0085E5FD /* HistoryIndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryIndexController.swift; sourceTree = "<group>"; };
-		EAE0C63A21D50E420085E5FD /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		EAE0C63C21D511600085E5FD /* RoomerCellForSearching.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomerCellForSearching.xib; sourceTree = "<group>"; };
 		EAE0C63E21D5148B0085E5FD /* RoomerCellForSearching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerCellForSearching.swift; sourceTree = "<group>"; };
 		EAE6DF2321A8F614000749CD /* QuanTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -341,20 +321,13 @@
 			isa = PBXGroup;
 			children = (
 				1882776B2268C814002E1813 /* CELL_Main_Customer_TableViewCell.swift */,
-				EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */,
 				EA00CA5E21DB6C0E000124F8 /* ContractController.swift */,
-				EAA4450121B4E170008AE807 /* CreateContractController.swift */,
 				EAA444ED21B2338B008AE807 /* CreateRoomController.swift */,
 				EA00CA5C21DA5BB6000124F8 /* CreateRoomerController.swift */,
-				EA00CA6421DBAD95000124F8 /* CreateVehicleController.swift */,
-				EAE0C63821D4EEFB0085E5FD /* HistoryIndexController.swift */,
 				EAE6DF3F21A9A009000749CD /* ListMotelController.swift */,
-				EAA4450321B4ECBD008AE807 /* ListRoomAvailableController.swift */,
 				EAA8927721B1590A005761BB /* ListRoomController.swift */,
 				EA00CA5A21D9AEC5000124F8 /* ListRoomerController.swift */,
-				EA00CA6221DBAAE8000124F8 /* ListVehicleController.swift */,
 				EAE6DF2821A8F614000749CD /* LoginController.swift */,
-				EA1ABD4221C6410400199442 /* PopupController.swift */,
 				EAE6DF3D21A92682000749CD /* RegisterController.swift */,
 				18D31CCD226829E600482F00 /* Screen_Main_Customer_ViewController.swift */,
 				1861967F226DBF23004E8A73 /* Screen_Tabar_Custom_Search_01_ViewController.swift */,
@@ -364,10 +337,7 @@
 				18FA183F22783753009D02B9 /* Screen_Tabar_Custom_Search_02_01_ViewController.swift */,
 				18FA18412278378F009D02B9 /* Screen_Tabar_Custom_Search_02_ViewController.swift */,
 				18F6B86B2269697B00523FBA /* Screen_Tabar_Customer_Seach_1_ViewController.swift */,
-				EAE0C63A21D50E420085E5FD /* SearchController.swift */,
-				EAA4450921B6761E008AE807 /* ServicePricesController.swift */,
 				18619681226DC148004E8A73 /* tabar */,
-				EA34CE9421C25AA900D79F26 /* WriteIndexController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -526,19 +496,15 @@
 				18FA184622786436009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController.swift in Sources */,
 				18FA183A227835D2009D02B9 /* function.swift in Sources */,
 				20776734228184430073E596 /* ThanhVien.swift in Sources */,
-				EAE0C63B21D50E420085E5FD /* SearchController.swift in Sources */,
 				EA00CA5921D9AE17000124F8 /* RoomerCell.swift in Sources */,
 				EAA8927A21B15928005761BB /* RoomCell.swift in Sources */,
-				EAA4450A21B6761E008AE807 /* ServicePricesController.swift in Sources */,
 				EAE6DF3E21A92682000749CD /* RegisterController.swift in Sources */,
 				18FA183E22783702009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_ViewController.swift in Sources */,
-				EA00CA6521DBAD95000124F8 /* CreateVehicleController.swift in Sources */,
 				EAE6DF2921A8F614000749CD /* LoginController.swift in Sources */,
 				EAE0C63721D4EE250085E5FD /* HistoryIndexCell.swift in Sources */,
 				EA115FB421BAA7ED001BC434 /* BillCell.swift in Sources */,
 				EAE6DF4021A9A009000749CD /* ListMotelController.swift in Sources */,
 				1882776E2268CA19002E1813 /* BaseView.swift in Sources */,
-				EAA4450221B4E170008AE807 /* CreateContractController.swift in Sources */,
 				18619685226DC34D004E8A73 /* CELL1_Table_Tabar_Custom_Search_01_TableViewCell.swift in Sources */,
 				EA00CA6121DBAA43000124F8 /* VehicleCell.swift in Sources */,
 				1861968C226DF062004E8A73 /* CELL_CELL1_Table_Custom_Search_01_CollectionViewCell.swift in Sources */,
@@ -551,31 +517,25 @@
 				EA1ABD3E21C4F65F00199442 /* WriteIndexCell.swift in Sources */,
 				18EBBE3C226A258B005969EB /* DS_phongcosan.swift in Sources */,
 				EAE6DF4621AABE63000749CD /* MotelCell.swift in Sources */,
-				EAE0C63921D4EEFB0085E5FD /* HistoryIndexController.swift in Sources */,
 				EA00CA5D21DA5BB6000124F8 /* CreateRoomerController.swift in Sources */,
 				EA00CA5B21D9AEC5000124F8 /* ListRoomerController.swift in Sources */,
 				20EC50CF227DE1F100C17212 /* Quanlythongtincanhan.swift in Sources */,
 				18D31CCE226829E700482F00 /* Screen_Main_Customer_ViewController.swift in Sources */,
 				18EBBE3E226A269A005969EB /* chuphong.swift in Sources */,
-				EA00CA6321DBAAE8000124F8 /* ListVehicleController.swift in Sources */,
 				18619680226DBF23004E8A73 /* Screen_Tabar_Custom_Search_01_ViewController.swift in Sources */,
 				1815DC5022671A3B001904A2 /* User.swift in Sources */,
 				EAE6DF2F21A8F614000749CD /* QuanTro.xcdatamodeld in Sources */,
 				20EC50D0227DE1F100C17212 /* Quanlyphong.swift in Sources */,
-				EA34CE9521C25AA900D79F26 /* WriteIndexController.swift in Sources */,
 				20EC50D3227DE1F100C17212 /* Quanlydaytro.swift in Sources */,
 				1882776C2268C814002E1813 /* CELL_Main_Customer_TableViewCell.swift in Sources */,
 				20EC50D6227DE27200C17212 /* Helper.swift in Sources */,
 				EAA8927821B1590A005761BB /* ListRoomController.swift in Sources */,
-				EAE0C63421D46D230085E5FD /* CollectingFeeController.swift in Sources */,
 				18FA183C227836AE009D02B9 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_ViewController.swift in Sources */,
-				EA1ABD4321C6410400199442 /* PopupController.swift in Sources */,
 				18FA184022783753009D02B9 /* Screen_Tabar_Custom_Search_02_01_ViewController.swift in Sources */,
 				20EC50D2227DE1F100C17212 /* NewUser.swift in Sources */,
 				18FA184422785B34009D02B9 /* CELL_Tabar_Custom_Search_02_01_DSOf01_TableViewCell.swift in Sources */,
 				EAE6DF2721A8F614000749CD /* AppDelegate.swift in Sources */,
 				EAD5632921AC4CC400ACC2DE /* ListOfMotel.swift in Sources */,
-				EAA4450421B4ECBD008AE807 /* ListRoomAvailableController.swift in Sources */,
 				18FA18422278378F009D02B9 /* Screen_Tabar_Custom_Search_02_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,10 +1,3 @@
-//
-//  ListRoomController.swift
-//  QuanTro
-//
-//  Created by Le Nguyen Quoc Cuong on 11/30/18.
-//  Copyright © 2018 Le Nguyen Quoc Cuong. All rights reserved.
-//
 
 import UIKit
 import Firebase

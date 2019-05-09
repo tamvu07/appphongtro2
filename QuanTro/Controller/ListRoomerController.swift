@@ -1,10 +1,3 @@
-//
-//  ListRoomerController.swift
-//  QuanTro
-//
-//  Created by Le Nguyen Quoc Cuong on 12/31/18.
-//  Copyright © 2018 Le Nguyen Quoc Cuong. All rights reserved.
-//
 
 import UIKit
 import FirebaseStorage
@@ -72,19 +65,26 @@ class ListRoomerController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.contentView.addSubview(cellSize)
         cell.contentView.sendSubviewToBack(cellSize)
         
-//        if let profileImageString = listRoomer[indexPath.row].profileImageString{
-//            let storageRef = Storage.storage().reference().child("imagesOfMotels/\(profileImageString)")
-//            storageRef.getData(maxSize: 3*1024*1024) { (data, error) in
-//                if error != nil{
-//                    print(error!)
-//                }else{
-//                    DispatchQueue.main.async{
-                        cell.imageV.image = UIImage.init(named: "person")
-//                    }
-//                }
-//
-//            }
-//        }
+        if let _ = listRoomer[indexPath.row].avatar{
+            let roomer: ThanhVien = listRoomer![indexPath.row]
+            let cmndRoomer: String = String.init(format: "%.0f", roomer.cmnd!)
+            let idThanhvien: String = roomer.idThanhVien!
+            let storageRef = Storage.storage().reference().child("imagesOfRoomer/\(idThanhvien)/\(cmndRoomer).jpg")
+            storageRef.getData(maxSize: 4*1024*1024) { (data, error) in
+                if error != nil{
+                    print(error!)
+                    cell.imageV.image = UIImage.init(named: "person")
+                }else{
+                    DispatchQueue.main.async{
+                        cell.imageV.image = UIImage.init(data: data!)
+                    }
+                }
+
+            }
+        }
+        else {
+            cell.imageV.image = UIImage.init(named: "person")
+        }
         
         cell.name.text = listRoomer[indexPath.row].ten
         cell.numPhone.text = String.init(format: "%.0f", listRoomer[indexPath.row].sdt!)
