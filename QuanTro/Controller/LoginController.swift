@@ -156,8 +156,9 @@ class LoginController: UIViewController{
                                  newUser.userID
                                  */
                                 if error == "" {
-                                    Store.shared.userMotel = newUser
-                                    self?.performSegue(withIdentifier: "FromLoginToListMotel", sender: self)
+//                                    Store.shared.userMotel = newUser
+//                                    self?.performSegue(withIdentifier: "FromLoginToListMotel", sender: self)
+                                    self!.goto_Screen_Main_chu_phong()
                                 }
                                 else {
                                     print(error)
@@ -237,7 +238,11 @@ class LoginController: UIViewController{
         navigationController?.pushViewController(scr!, animated: true)
     }
     
-    
+    func goto_Screen_Main_chu_phong() {
+        let scr = self.storyboard?.instantiateViewController(withIdentifier: "Screen_Chat_Roon_With_Rent_01") as! Screen_Chat_Roon_With_Rent_01_ViewController
+        //        present(scr!, animated: true, completion: nil)
+        navigationController?.pushViewController(scr, animated: true)
+    }
     
     
 
