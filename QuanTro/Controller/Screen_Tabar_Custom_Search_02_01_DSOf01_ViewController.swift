@@ -28,19 +28,6 @@ class Screen_Tabar_Custom_Search_02_01_DSOf01_ViewController: UIViewController {
         tablename.observe(.childAdded, with: { (snapshot) in
             // kiem tra xem postDict co du lieu hay ko
             let postDict = snapshot.value as? [String : AnyObject]
-            
-            /*
-             let postDict = snapshot.value ?? nil
-             let data: Class?
-             do {
-                data = try FirebaseDecoder().decode(Class.self, from: postDict)
-             }
-             catch let error {
-             print(error)
-             }
-             data.quanlythongtincanhan.linkAvatar
-             */
-            
             if(postDict != nil)
             {
                 let id_User2 = snapshot.key

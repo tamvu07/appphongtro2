@@ -17,8 +17,8 @@ class CELL_Tabar_Custom_Search_02_01_DSOf01_TableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         image_phong.layer.cornerRadius = image_phong.frame.width/2
-        image_phong.layer.borderWidth = 2.0
-        image_phong.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+//        image_phong.layer.borderWidth = 2.0
+//        image_phong.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

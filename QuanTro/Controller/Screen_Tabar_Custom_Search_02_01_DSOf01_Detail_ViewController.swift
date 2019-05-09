@@ -10,12 +10,18 @@ import UIKit
 
 class Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_ViewController: UIViewController {
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
     }
+    
+    
+    
     
     @IBAction func bt_Chat(_ sender: Any) {
         self.goto_MH_Chat_tabar()

@@ -20,6 +20,8 @@
 		1882776E2268CA19002E1813 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882776D2268CA19002E1813 /* BaseView.swift */; };
 		18B942172266DCCF0053370D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B942162266DCCF0053370D /* GoogleService-Info.plist */; };
 		18D31CCE226829E700482F00 /* Screen_Main_Customer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D31CCD226829E600482F00 /* Screen_Main_Customer_ViewController.swift */; };
+		18E1D11A228482FF008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_up_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1D119228482FF008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_up_ViewController.swift */; };
+		18E1D11C2284839C008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_drown_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1D11B2284839C008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_drown_ViewController.swift */; };
 		18EBBE3C226A258B005969EB /* DS_phongcosan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBBE3B226A258B005969EB /* DS_phongcosan.swift */; };
 		18EBBE3E226A269A005969EB /* chuphong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBBE3D226A269A005969EB /* chuphong.swift */; };
 		18F6B86C2269697B00523FBA /* Screen_Tabar_Customer_Seach_1_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B86B2269697B00523FBA /* Screen_Tabar_Customer_Seach_1_ViewController.swift */; };
@@ -87,6 +89,8 @@
 		1882776D2268CA19002E1813 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		18B942162266DCCF0053370D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18D31CCD226829E600482F00 /* Screen_Main_Customer_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_Main_Customer_ViewController.swift; sourceTree = "<group>"; };
+		18E1D119228482FF008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_up_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_up_ViewController.swift; sourceTree = "<group>"; };
+		18E1D11B2284839C008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_drown_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_drown_ViewController.swift; sourceTree = "<group>"; };
 		18EBBE3B226A258B005969EB /* DS_phongcosan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DS_phongcosan.swift; sourceTree = "<group>"; };
 		18EBBE3D226A269A005969EB /* chuphong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chuphong.swift; sourceTree = "<group>"; };
 		18F6B86B2269697B00523FBA /* Screen_Tabar_Customer_Seach_1_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_Tabar_Customer_Seach_1_ViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +357,8 @@
 				18FA18412278378F009D02B9 /* Screen_Tabar_Custom_Search_02_ViewController.swift */,
 				18F6B86B2269697B00523FBA /* Screen_Tabar_Customer_Seach_1_ViewController.swift */,
 				18619681226DC148004E8A73 /* tabar */,
+				18E1D119228482FF008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_up_ViewController.swift */,
+				18E1D11B2284839C008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_drown_ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				EA1ABD3E21C4F65F00199442 /* WriteIndexCell.swift in Sources */,
 				18EBBE3C226A258B005969EB /* DS_phongcosan.swift in Sources */,
 				EAE6DF4621AABE63000749CD /* MotelCell.swift in Sources */,
+				18E1D11A228482FF008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_up_ViewController.swift in Sources */,
 				EA00CA5D21DA5BB6000124F8 /* CreateRoomerController.swift in Sources */,
 				EA00CA5B21D9AEC5000124F8 /* ListRoomerController.swift in Sources */,
 				20EC50CF227DE1F100C17212 /* Quanlythongtincanhan.swift in Sources */,
@@ -540,6 +547,7 @@
 				18EBBE3E226A269A005969EB /* chuphong.swift in Sources */,
 				18619680226DBF23004E8A73 /* Screen_Tabar_Custom_Search_01_ViewController.swift in Sources */,
 				18FDA6B322840F30003F8045 /* Screen_Chat_Room_With_Rent_01_01_ViewController.swift in Sources */,
+				18E1D11C2284839C008B4963 /* Screen_Tabar_Custom_Search_02_01_DSOf01_Detail_drown_ViewController.swift in Sources */,
 				1815DC5022671A3B001904A2 /* User.swift in Sources */,
 				EAE6DF2F21A8F614000749CD /* QuanTro.xcdatamodeld in Sources */,
 				20EC50D0227DE1F100C17212 /* Quanlyphong.swift in Sources */,

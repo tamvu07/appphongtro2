@@ -68,6 +68,18 @@ class Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController: UIVie
         }
     }
     
+    
+    // chua action nha
+    @IBAction func bt_search44(_ sender: Any) {
+        print(".........bam search ...............\n")
+        let scr = self.storyboard?.instantiateViewController(withIdentifier: "Screen_Tabar_Custom_Search_02")
+        //        present(scr!, animated: true, completion: nil)
+        navigationController?.popToViewController(scr!, animated: true)
+        
+        
+    }
+    
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         txt_chat.layer.borderColor = UIColor.blue.cgColor
         txt_chat.layer.borderWidth = 2.0

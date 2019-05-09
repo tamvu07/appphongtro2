@@ -15,6 +15,10 @@ class Screen_Tabar_Custom_Search_02_ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let countryNameARR2 = ["a","b","c","d","q","rw","e","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","b","b"]
     
+//        let countryNameARR = [
+//            "Thành Phố Hồ Chí Minh"
+//        ]
+    
     let countryNameARR = [
         "An Giang",
         "Bà Rịa - Vũng Tàu",
@@ -112,8 +116,12 @@ extension Screen_Tabar_Custom_Search_02_ViewController: UITableViewDataSource,UI
         }else{
             text = countryNameARR[indexPath.row]
         }
-        TP = text
-        goto_MH_timkiem_02_01()
+        if(text == "Thành Phố Hồ Chí Minh")
+        {
+            TP = text
+            goto_MH_timkiem_02_01()
+        }
+
     }
 }
 
