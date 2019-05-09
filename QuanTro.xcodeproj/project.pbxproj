@@ -60,9 +60,7 @@
 		EAA4450A21B6761E008AE807 /* ServicePricesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA4450921B6761E008AE807 /* ServicePricesController.swift */; };
 		EAA8927821B1590A005761BB /* ListRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA8927721B1590A005761BB /* ListRoomController.swift */; };
 		EAA8927A21B15928005761BB /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA8927921B15928005761BB /* RoomCell.swift */; };
-		EAAB960421BA4D21005F30ED /* CollectingRentalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB960321BA4D21005F30ED /* CollectingRentalController.swift */; };
 		EAD5632921AC4CC400ACC2DE /* ListOfMotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5632821AC4CC400ACC2DE /* ListOfMotel.swift */; };
-		EAD5632D21AFF9A100ACC2DE /* MotelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5632C21AFF9A100ACC2DE /* MotelController.swift */; };
 		EAE0C63421D46D230085E5FD /* CollectingFeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */; };
 		EAE0C63721D4EE250085E5FD /* HistoryIndexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63621D4EE250085E5FD /* HistoryIndexCell.swift */; };
 		EAE0C63921D4EEFB0085E5FD /* HistoryIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C63821D4EEFB0085E5FD /* HistoryIndexController.swift */; };
@@ -139,9 +137,7 @@
 		EAA4450B21B6C20A008AE807 /* QuanTro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuanTro.entitlements; sourceTree = "<group>"; };
 		EAA8927721B1590A005761BB /* ListRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomController.swift; sourceTree = "<group>"; };
 		EAA8927921B15928005761BB /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
-		EAAB960321BA4D21005F30ED /* CollectingRentalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectingRentalController.swift; sourceTree = "<group>"; };
 		EAD5632821AC4CC400ACC2DE /* ListOfMotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMotel.swift; sourceTree = "<group>"; };
-		EAD5632C21AFF9A100ACC2DE /* MotelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotelController.swift; sourceTree = "<group>"; };
 		EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectingFeeController.swift; sourceTree = "<group>"; };
 		EAE0C63621D4EE250085E5FD /* HistoryIndexCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryIndexCell.swift; sourceTree = "<group>"; };
 		EAE0C63821D4EEFB0085E5FD /* HistoryIndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryIndexController.swift; sourceTree = "<group>"; };
@@ -346,7 +342,6 @@
 			children = (
 				1882776B2268C814002E1813 /* CELL_Main_Customer_TableViewCell.swift */,
 				EAE0C63321D46D230085E5FD /* CollectingFeeController.swift */,
-				EAAB960321BA4D21005F30ED /* CollectingRentalController.swift */,
 				EA00CA5E21DB6C0E000124F8 /* ContractController.swift */,
 				EAA4450121B4E170008AE807 /* CreateContractController.swift */,
 				EAA444ED21B2338B008AE807 /* CreateRoomController.swift */,
@@ -359,7 +354,6 @@
 				EA00CA5A21D9AEC5000124F8 /* ListRoomerController.swift */,
 				EA00CA6221DBAAE8000124F8 /* ListVehicleController.swift */,
 				EAE6DF2821A8F614000749CD /* LoginController.swift */,
-				EAD5632C21AFF9A100ACC2DE /* MotelController.swift */,
 				EA1ABD4221C6410400199442 /* PopupController.swift */,
 				EAE6DF3D21A92682000749CD /* RegisterController.swift */,
 				18D31CCD226829E600482F00 /* Screen_Main_Customer_ViewController.swift */,
@@ -533,7 +527,6 @@
 				18FA183A227835D2009D02B9 /* function.swift in Sources */,
 				20776734228184430073E596 /* ThanhVien.swift in Sources */,
 				EAE0C63B21D50E420085E5FD /* SearchController.swift in Sources */,
-				EAD5632D21AFF9A100ACC2DE /* MotelController.swift in Sources */,
 				EA00CA5921D9AE17000124F8 /* RoomerCell.swift in Sources */,
 				EAA8927A21B15928005761BB /* RoomCell.swift in Sources */,
 				EAA4450A21B6761E008AE807 /* ServicePricesController.swift in Sources */,
@@ -561,7 +554,6 @@
 				EAE0C63921D4EEFB0085E5FD /* HistoryIndexController.swift in Sources */,
 				EA00CA5D21DA5BB6000124F8 /* CreateRoomerController.swift in Sources */,
 				EA00CA5B21D9AEC5000124F8 /* ListRoomerController.swift in Sources */,
-				EAAB960421BA4D21005F30ED /* CollectingRentalController.swift in Sources */,
 				20EC50CF227DE1F100C17212 /* Quanlythongtincanhan.swift in Sources */,
 				18D31CCE226829E700482F00 /* Screen_Main_Customer_ViewController.swift in Sources */,
 				18EBBE3E226A269A005969EB /* chuphong.swift in Sources */,
