@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7xv-6N-Viy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7xv-6N-Viy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -484,7 +484,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kqy-e5-lgP">
-                                <rect key="frame" x="0.0" y="-14.5" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELL11" rowHeight="121" id="w9x-Y6-eGn" customClass="CELL1_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_TableViewCell" customModule="QuanTro" customModuleProvider="target">
@@ -581,19 +581,59 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFK-57-6xx" userLabel="View11">
+                                <rect key="frame" x="10" y="547" width="355" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-3B-aJX">
+                                        <rect key="frame" x="10" y="5" width="279.5" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="h2x-xs-TW7" id="r49-BP-Wc9"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-my-enK">
+                                        <rect key="frame" x="299.5" y="10" width="50.5" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="sent"/>
+                                        <connections>
+                                            <action selector="bt_Gui:" destination="h2x-xs-TW7" eventType="touchUpInside" id="Ucl-FP-u7e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VM5-my-enK" secondAttribute="bottom" constant="10" id="FYC-Gn-bYX"/>
+                                    <constraint firstItem="jgX-3B-aJX" firstAttribute="leading" secondItem="GFK-57-6xx" secondAttribute="leading" constant="10" id="RLh-iM-aOR"/>
+                                    <constraint firstItem="jgX-3B-aJX" firstAttribute="top" secondItem="GFK-57-6xx" secondAttribute="top" constant="5" id="WRw-CR-8n9"/>
+                                    <constraint firstAttribute="trailing" secondItem="VM5-my-enK" secondAttribute="trailing" constant="5" id="Wbt-TC-4y3"/>
+                                    <constraint firstItem="VM5-my-enK" firstAttribute="leading" secondItem="jgX-3B-aJX" secondAttribute="trailing" constant="10" id="YmP-8l-L5C"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZE1-Lv-0ee"/>
+                                    <constraint firstItem="VM5-my-enK" firstAttribute="width" secondItem="GFK-57-6xx" secondAttribute="width" multiplier="1:7" id="gHV-eT-r4Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="jgX-3B-aJX" secondAttribute="bottom" constant="5" id="iBl-2A-SdD"/>
+                                    <constraint firstItem="VM5-my-enK" firstAttribute="top" secondItem="GFK-57-6xx" secondAttribute="top" constant="10" id="mto-Dz-PG1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
-                            <constraint firstItem="Kqy-e5-lgP" firstAttribute="height" secondItem="ZzM-nU-ngS" secondAttribute="height" id="ZOV-qy-p64"/>
-                            <constraint firstItem="Kqy-e5-lgP" firstAttribute="width" secondItem="ZzM-nU-ngS" secondAttribute="width" id="gON-aN-dmH"/>
-                            <constraint firstItem="Kqy-e5-lgP" firstAttribute="centerY" secondItem="FPQ-5M-NUJ" secondAttribute="centerY" id="hQF-oP-Bqd"/>
-                            <constraint firstItem="Kqy-e5-lgP" firstAttribute="centerX" secondItem="FPQ-5M-NUJ" secondAttribute="centerX" id="kh6-RP-fm7"/>
+                            <constraint firstItem="GFK-57-6xx" firstAttribute="leading" secondItem="FPQ-5M-NUJ" secondAttribute="leading" constant="10" id="0Pg-wd-ZiU"/>
+                            <constraint firstItem="FPQ-5M-NUJ" firstAttribute="trailing" secondItem="GFK-57-6xx" secondAttribute="trailing" constant="10" id="ArN-H1-6sa"/>
+                            <constraint firstAttribute="bottom" secondItem="Kqy-e5-lgP" secondAttribute="bottom" constant="150" id="TRo-Yp-3m3"/>
+                            <constraint firstItem="Kqy-e5-lgP" firstAttribute="trailing" secondItem="FPQ-5M-NUJ" secondAttribute="trailing" id="UWx-iO-708"/>
+                            <constraint firstItem="Kqy-e5-lgP" firstAttribute="leading" secondItem="FPQ-5M-NUJ" secondAttribute="leading" id="ZWu-nH-WVq"/>
+                            <constraint firstItem="Kqy-e5-lgP" firstAttribute="top" secondItem="ZzM-nU-ngS" secondAttribute="top" id="d9l-38-n7t"/>
+                            <constraint firstItem="GFK-57-6xx" firstAttribute="top" secondItem="Kqy-e5-lgP" secondAttribute="bottom" constant="30" id="iTQ-XN-tMA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FPQ-5M-NUJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chat" image="chat" id="6u8-iy-zKm"/>
                     <connections>
+                        <outlet property="bt_gui" destination="VM5-my-enK" id="JnV-yz-Alw"/>
                         <outlet property="tableView" destination="Kqy-e5-lgP" id="Dgv-eD-gj3"/>
+                        <outlet property="txt_chat" destination="jgX-3B-aJX" id="M3B-eG-R6f"/>
+                        <outlet property="view_text" destination="GFK-57-6xx" id="5AX-e9-nKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ua-sI-GYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1673,16 +1713,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background3" width="960" height="600"/>
+        <image name="background3" width="1920" height="1200"/>
         <image name="chat" width="100" height="100"/>
         <image name="friend" width="100" height="100"/>
         <image name="listpeople" width="32" height="32"/>
-        <image name="listroom" width="60" height="60"/>
-        <image name="manage" width="48" height="48"/>
-        <image name="motel" width="60" height="60"/>
-        <image name="person" width="256" height="256"/>
-        <image name="plus_math" width="25" height="25"/>
-        <image name="right" width="128" height="128"/>
+        <image name="listroom" width="120" height="120"/>
+        <image name="manage" width="96" height="96"/>
+        <image name="motel" width="120" height="120"/>
+        <image name="person" width="512" height="512"/>
+        <image name="plus_math" width="75" height="75"/>
+        <image name="right" width="256" height="256"/>
+        <image name="sent" width="512" height="512"/>
         <image name="smallcontract" width="32" height="32"/>
         <image name="smallinformation" width="32" height="32"/>
     </resources>
